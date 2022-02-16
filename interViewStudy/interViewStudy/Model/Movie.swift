@@ -9,9 +9,13 @@ import Foundation
 
 struct Movie: Decodable {
     let dates: MovieDate
-    let page: Int, totalPages: Int, totalResults: Int
-    let result: MovieResult
+    let result: [MovieResult]
     
+    enum CodingKeys: String, CodingKey {
+        case dates
+        case result = "results"
+    }
+
     struct MovieDate: Decodable {
         let maximum: String
         let minimum: String
