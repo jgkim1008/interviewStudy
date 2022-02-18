@@ -24,5 +24,12 @@ enum TMDBRoute: Route {
             return "/3/movie/now_playing"
         }
     }
+    
+    func generateNowPlayingQueryItems(apiKey: String, page: String = "1") -> [URLQueryItem] {
+        var queryItems: [URLQueryItem] = []
+        queryItems.append(URLQueryItem(name: "api_key",value:"6a57b97030d7523e4a313c9dbd106cdd"))
+        queryItems.append(URLQueryItem(name: "language", value: "en-US"))
+        queryItems.append(URLQueryItem(name: "page", value: page))
+        return queryItems
+    }
 }
-//https://api.themoviedb.org/3/movie/now_playing?api_key=<<api_key>>&language=en-US&page=1
