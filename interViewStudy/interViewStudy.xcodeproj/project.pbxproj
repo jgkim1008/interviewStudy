@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E63DE3BF27BEC748004BAAB6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63DE3BE27BEC748004BAAB6 /* MainViewModel.swift */; };
+		E63DE3C227BEE5AD004BAAB6 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63DE3C127BEE5AD004BAAB6 /* NotificationName+Extension.swift */; };
 		E66BEB7627BAD84600E8D8D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BEB7527BAD84600E8D8D8 /* AppDelegate.swift */; };
 		E66BEB7827BAD84600E8D8D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BEB7727BAD84600E8D8D8 /* SceneDelegate.swift */; };
 		E66BEB7A27BAD84600E8D8D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BEB7927BAD84600E8D8D8 /* ViewController.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E63DE3BE27BEC748004BAAB6 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		E63DE3C127BEE5AD004BAAB6 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		E66BEB7227BAD84600E8D8D8 /* interViewStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = interViewStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E66BEB7527BAD84600E8D8D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E66BEB7727BAD84600E8D8D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +98,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E63DE3BD27BEC73B004BAAB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E63DE3BE27BEC748004BAAB6 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E63DE3C027BED76D004BAAB6 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				E63DE3C127BEE5AD004BAAB6 /* NotificationName+Extension.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		E66BEB6927BAD84600E8D8D8 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +137,8 @@
 		E66BEB7427BAD84600E8D8D8 /* interViewStudy */ = {
 			isa = PBXGroup;
 			children = (
+				E63DE3C027BED76D004BAAB6 /* Notification */,
+				E63DE3BD27BEC73B004BAAB6 /* ViewModel */,
 				E6C5709727BD8BF9007A4255 /* Enum */,
 				E66BEBB727BAE32100E8D8D8 /* ErrorCase */,
 				E66BEBA827BAE18800E8D8D8 /* Services */,
@@ -330,8 +352,10 @@
 				E66BEBB427BAE2A500E8D8D8 /* NetworkModule.swift in Sources */,
 				E66BEBB027BAE28200E8D8D8 /* Networkable.swift in Sources */,
 				E66BEBB227BAE28D00E8D8D8 /* NetworkManager.swift in Sources */,
+				E63DE3BF27BEC748004BAAB6 /* MainViewModel.swift in Sources */,
 				E66BEB7627BAD84600E8D8D8 /* AppDelegate.swift in Sources */,
 				E66BEBAC27BAE26800E8D8D8 /* HTTPMethod.swift in Sources */,
+				E63DE3C227BEE5AD004BAAB6 /* NotificationName+Extension.swift in Sources */,
 				E66BEBA727BADDFC00E8D8D8 /* Movie.swift in Sources */,
 				E6C5709927BD8C05007A4255 /* TMDBRoute.swift in Sources */,
 				E66BEBAA27BAE23F00E8D8D8 /* Route.swift in Sources */,
