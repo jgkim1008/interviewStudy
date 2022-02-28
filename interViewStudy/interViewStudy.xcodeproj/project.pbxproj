@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E618162427CB05B8003CD4E4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162327CB05B8003CD4E4 /* ImageManager.swift */; };
 		E618162627CB1514003CD4E4 /* MovieInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162527CB1514003CD4E4 /* MovieInfoModel.swift */; };
+		E618162827CBCA7B003CD4E4 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162727CBCA7B003CD4E4 /* MainTabBarViewController.swift */; };
 		E618162A27CBCE32003CD4E4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162927CBCE32003CD4E4 /* SearchViewController.swift */; };
 		E618162C27CC0540003CD4E4 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162B27CC0540003CD4E4 /* SearchModel.swift */; };
 		E618162E27CC0710003CD4E4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162D27CC0710003CD4E4 /* SearchViewModel.swift */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		E618162327CB05B8003CD4E4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		E618162527CB1514003CD4E4 /* MovieInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoModel.swift; sourceTree = "<group>"; };
+		E618162727CBCA7B003CD4E4 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		E618162927CBCE32003CD4E4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E618162B27CC0540003CD4E4 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		E618162D27CC0710003CD4E4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			children = (
 				E66BEB7927BAD84600E8D8D8 /* MainViewController.swift */,
 				E618162927CBCE32003CD4E4 /* SearchViewController.swift */,
+				E618162727CBCA7B003CD4E4 /* MainTabBarViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				E66BEB7A27BAD84600E8D8D8 /* MainViewController.swift in Sources */,
 				E620353327C3444100EC8F9E /* CollectionView+Extension.swift in Sources */,
 				E66BEBB427BAE2A500E8D8D8 /* NetworkModule.swift in Sources */,
+				E618162827CBCA7B003CD4E4 /* MainTabBarViewController.swift in Sources */,
 				E66BEBB027BAE28200E8D8D8 /* Networkable.swift in Sources */,
 				E618162427CB05B8003CD4E4 /* ImageManager.swift in Sources */,
 				E690B02227C18DE900C57B10 /* MovieColleionViewCell.swift in Sources */,
