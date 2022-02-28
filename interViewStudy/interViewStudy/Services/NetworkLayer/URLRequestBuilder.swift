@@ -53,6 +53,6 @@ enum URLRequestBuilder {
         urlComponents?.scheme = route.scheme
         urlComponents?.path = route.path
         urlComponents?.queryItems = queryItems
-        return urlComponents?.url
+        return urlComponents?.url?.absoluteURL
     }
 }
