@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		E618162427CB05B8003CD4E4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162327CB05B8003CD4E4 /* ImageManager.swift */; };
 		E618162627CB1514003CD4E4 /* MovieInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162527CB1514003CD4E4 /* MovieInfoModel.swift */; };
+		E618162A27CBCE32003CD4E4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162927CBCE32003CD4E4 /* SearchViewController.swift */; };
 		E618162C27CC0540003CD4E4 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162B27CC0540003CD4E4 /* SearchModel.swift */; };
+		E618162E27CC0710003CD4E4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E618162D27CC0710003CD4E4 /* SearchViewModel.swift */; };
 		E620353127C3322F00EC8F9E /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E620353027C3322F00EC8F9E /* UILabel+Extension.swift */; };
 		E620353327C3444100EC8F9E /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E620353227C3444100EC8F9E /* CollectionView+Extension.swift */; };
 		E63DE3BF27BEC748004BAAB6 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63DE3BE27BEC748004BAAB6 /* MainViewModel.swift */; };
@@ -31,6 +33,7 @@
 		E66BEBB427BAE2A500E8D8D8 /* NetworkModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BEBB327BAE2A500E8D8D8 /* NetworkModule.swift */; };
 		E66BEBB927BAE32D00E8D8D8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66BEBB827BAE32D00E8D8D8 /* NetworkError.swift */; };
 		E690B02227C18DE900C57B10 /* MovieColleionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E690B02127C18DE900C57B10 /* MovieColleionViewCell.swift */; };
+		E69332A027CCB1450013FA3F /* SeachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E693329F27CCB1450013FA3F /* SeachTableViewCell.swift */; };
 		E6C5709927BD8C05007A4255 /* TMDBRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C5709827BD8C05007A4255 /* TMDBRoute.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,7 @@
 /* Begin PBXFileReference section */
 		E618162327CB05B8003CD4E4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		E618162527CB1514003CD4E4 /* MovieInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoModel.swift; sourceTree = "<group>"; };
+		E618162927CBCE32003CD4E4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E618162B27CC0540003CD4E4 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 		E618162D27CC0710003CD4E4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		E620353027C3322F00EC8F9E /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		E66BEBB327BAE2A500E8D8D8 /* NetworkModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModule.swift; sourceTree = "<group>"; };
 		E66BEBB827BAE32D00E8D8D8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		E690B02127C18DE900C57B10 /* MovieColleionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieColleionViewCell.swift; sourceTree = "<group>"; };
+		E693329F27CCB1450013FA3F /* SeachTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachTableViewCell.swift; sourceTree = "<group>"; };
 		E6C5709827BD8C05007A4255 /* TMDBRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				E63DE3BE27BEC748004BAAB6 /* MainViewModel.swift */,
+				E618162D27CC0710003CD4E4 /* SearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 		E66BEB7427BAD84600E8D8D8 /* interViewStudy */ = {
 			isa = PBXGroup;
 			children = (
+				E690D0D327CCA70F0037AA91 /* ViewController */,
+				E690B02027C18A9E00C57B10 /* View */,
 				E63DE3C027BED76D004BAAB6 /* Extension */,
 				E63DE3BD27BEC73B004BAAB6 /* ViewModel */,
 				E6C5709727BD8BF9007A4255 /* Enum */,
@@ -226,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				E690B02127C18DE900C57B10 /* MovieColleionViewCell.swift */,
+				E693329F27CCB1450013FA3F /* SeachTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				E66BEB7927BAD84600E8D8D8 /* MainViewController.swift */,
+				E618162927CBCE32003CD4E4 /* SearchViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -379,6 +389,7 @@
 			files = (
 				E618162C27CC0540003CD4E4 /* SearchModel.swift in Sources */,
 				E66BEBAE27BAE27500E8D8D8 /* URLRequestBuilder.swift in Sources */,
+				E69332A027CCB1450013FA3F /* SeachTableViewCell.swift in Sources */,
 				E618162627CB1514003CD4E4 /* MovieInfoModel.swift in Sources */,
 				E66BEB7A27BAD84600E8D8D8 /* MainViewController.swift in Sources */,
 				E620353327C3444100EC8F9E /* CollectionView+Extension.swift in Sources */,
@@ -390,7 +401,9 @@
 				E63DE3BF27BEC748004BAAB6 /* MainViewModel.swift in Sources */,
 				E66BEB7627BAD84600E8D8D8 /* AppDelegate.swift in Sources */,
 				E620353127C3322F00EC8F9E /* UILabel+Extension.swift in Sources */,
+				E618162E27CC0710003CD4E4 /* SearchViewModel.swift in Sources */,
 				E66BEBAC27BAE26800E8D8D8 /* HTTPMethod.swift in Sources */,
+				E618162A27CBCE32003CD4E4 /* SearchViewController.swift in Sources */,
 				E66BEBA727BADDFC00E8D8D8 /* MovieModel.swift in Sources */,
 				E6C5709927BD8C05007A4255 /* TMDBRoute.swift in Sources */,
 				E66BEBAA27BAE23F00E8D8D8 /* Route.swift in Sources */,
