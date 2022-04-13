@@ -67,7 +67,6 @@ final class SearchViewController: UIViewController {
 
 extension SearchViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-  
         let text = searchController.searchBar.text
         viewModel.searchQuery(text: text)
     }

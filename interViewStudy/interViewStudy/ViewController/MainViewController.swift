@@ -14,23 +14,20 @@ final class MainViewController: UIViewController, UICollectionViewDelegate {
         collectionView.register(MovieColleionViewCell.self, forCellWithReuseIdentifier: MovieColleionViewCell.identifier)
         return collectionView
     }()
-
+    
     private let viewModel = MainViewModel()
     private let topInset: CGFloat = 5
     private let bottomInset: CGFloat = 15
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.topItem?.title = "현재 상영 중"
-        navigationController?.navigationBar.tintColor = .white
+        self.viewModel.fetchData()
+        makeNavigationItem()
         setLayoutForCollectionView()
         collectionView.delegate = self
         makeDataSource()
-
-
     }
-
+    
     
     private func makeNavigationItem() {
         navigationController?.navigationBar.barStyle = .black
@@ -49,12 +46,14 @@ final class MainViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func makeDataSource() {
-        viewModel.dataSource = DataSource(collectionView: collectionView) { (collectionView, indexPath, movieData) -> UICollectionViewCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieColleionViewCell.identifier, for: indexPath) as? MovieColleionViewCell
-            cell?.configure(of: movieData)
-        
+        viewModel.dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, movieData in
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieColleionViewCell.identifier, for: indexPath) as? MovieColleionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.configure(of: movieData)
+            
             return cell
-        }
+        })
     }
 }
 

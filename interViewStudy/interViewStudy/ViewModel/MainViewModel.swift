@@ -22,10 +22,20 @@ typealias SnapShot = NSDiffableDataSourceSnapshot<Section, MovieInfoModel>
 final class MainViewModel {
     private let networkManager = NetworkManager(networkable: NetworkModule())
     private let imageManager = ImageManager()
-    var currentPage = 1
+    private var currentPage = 1
+    private  var viewState: viewState = .idle
     var dataSource: DataSource?
-    var viewState: viewState = .idle
-    var movieList: [MovieInfoModel] = []
+
+    var movieList: [MovieInfoModel] = [] {
+        didSet {
+            guard var snapShot = dataSource?.snapshot() else { return }
+            if snapShot.sectionIdentifiers.isEmpty {
+                snapShot.appendSections([.main])
+            }
+            snapShot.appendItems(movieList)
+            dataSource?.apply(snapShot, animatingDifferences: false)
+        }
+    }
     
     func fetchData() {
         guard viewState == .idle else { return }
@@ -34,7 +44,7 @@ final class MainViewModel {
         
         networkManager.request(with: route,
                                queryItems: route.generateNowPlayingQueryItems(page: currentPage),
-                               requestType: .request) { [weak self](result: Result<MovieModel, Error>) in
+                               requestType: .request) { [weak self] (result: Result<MovieModel, Error>) in
             switch result {
             case .success(let data):
                 self?.currentPage += 1
@@ -47,19 +57,11 @@ final class MainViewModel {
                         self?.viewState = .idle
                     }
                 }
-                var snapShot = SnapShot()
-                if snapShot.sectionIdentifiers.isEmpty {
-                    snapShot.appendSections([.main])
-                }
-                guard let movieList = self?.movieList else { return }
-                snapShot.appendItems(movieList)
-                self?.dataSource?.apply(snapShot, animatingDifferences: false)
-
             case .failure(let error):
-                assertionFailure(error.localizedDescription)
+                if error.localizedDescription != "cancelled" {
+                    assertionFailure(error.localizedDescription)
+                }
             }
         }
     }
-    
-  
 }

@@ -8,13 +8,27 @@
 import Foundation
 
 class NetworkModule: Networkable {
-    private let rangeOfSuccessState = 200...299
-    
+    private var dataTask: URLSessionDataTask?
+
     func runDataTask<T: Decodable>(request: URLRequest,
                                    completionHandler: @escaping (Result<T, Error>) -> Void) {
         
-        URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
+        dataTask?.cancel()
+        dataTask = nil
+        let rangeOfSuccessState = 200...299
+        let customURLSession: URLSession = {
+            let oneKilobyte = 1024
+            let oneMegabyte = oneKilobyte * oneKilobyte
+            URLCache.shared.memoryCapacity = 512 * oneMegabyte
+            
+            let config = URLSessionConfiguration.default
+            config.requestCachePolicy = .returnCacheDataElseLoad
+            
+            return URLSession(configuration: config)
+        }()
 
+        dataTask = customURLSession.dataTask(with: request) { (data, response, error) in
+            
             if let error = error {
                 DispatchQueue.main.async {
                     completionHandler(.failure(error))
@@ -46,6 +60,7 @@ class NetworkModule: Networkable {
                     completionHandler(.failure(error))
                 }
             }
-        }.resume()
+        }
+        dataTask?.resume()
     }
 }

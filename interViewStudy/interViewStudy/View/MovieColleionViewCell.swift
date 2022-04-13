@@ -15,6 +15,7 @@ final class MovieColleionViewCell: UICollectionViewCell {
         posterImageView.clipsToBounds = true
         return posterImageView
     }()
+    var id: Int?
     
     private var titleLabel = UILabel.makeLabel(font: .callout, color: .white)
     private var scopeImage = UIImageView(image: UIImage(systemName: "star.fill"))
@@ -49,6 +50,12 @@ final class MovieColleionViewCell: UICollectionViewCell {
         cellStackView.distribution = .fill
         return cellStackView
     }()
+    
+    override func prepareForReuse() {
+        titleLabel.text = nil
+        posterImageView.image = nil
+        scopeScore.text = nil
+    }
     
     func configure(of movie: MovieInfoModel?) {
         scopeImage.tintColor = .yellow
