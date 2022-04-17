@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-enum viewState {
+enum ViewState {
     case idle
     case isLoading
 }
@@ -23,10 +23,10 @@ final class MainViewModel {
     private let networkManager = NetworkManager(networkable: NetworkModule())
     private let imageManager = ImageManager()
     private var currentPage = 1
-    private  var viewState: viewState = .idle
+    private var viewState: ViewState = .idle
     var dataSource: DataSource?
 
-    var movieList: [MovieInfoModel] = [] {
+    private var movieList: [MovieInfoModel] = [] {
         didSet {
             guard var snapShot = dataSource?.snapshot() else { return }
             if snapShot.sectionIdentifiers.isEmpty {

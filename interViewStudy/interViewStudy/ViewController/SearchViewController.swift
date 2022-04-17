@@ -8,7 +8,7 @@
 import UIKit
 
 final class SearchViewController: UIViewController {
-    private lazy var collectionView: UICollectionView = {
+    private var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .tableLayout)
         collectionView.register(SearchTableViewCell.self, forCellWithReuseIdentifier: SearchTableViewCell.identifier)
         return collectionView

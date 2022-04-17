@@ -10,15 +10,14 @@ import UIKit
 
 typealias SearchViewDataSource = UICollectionViewDiffableDataSource<Section, MovieInfoModel>
 typealias SearchViewSnapShot = NSDiffableDataSourceSnapshot<Section, MovieInfoModel>
-typealias CompleteImageCompletion = (UIImage) -> Void
 
 final class SearchViewModel {
     private let networkManager = NetworkManager(networkable: NetworkModule())
     private let imageManager = ImageManager()
+    private var workItem: DispatchWorkItem?
+    private var searchResultList: [MovieInfoModel] = []
     var dataSource: SearchViewDataSource?
-    var workItem: DispatchWorkItem?
-    var completion: CompleteImageCompletion?
-    var searchResultList: [MovieInfoModel] = []
+
     
     func removeSnapShot() {
         var snapShot = dataSource?.snapshot()
@@ -34,7 +33,7 @@ final class SearchViewModel {
         dataSource?.apply(snapshot, animatingDifferences: false)
     }
     
-    func debounce(action: @escaping () -> Void) {
+    private func debounce(action: @escaping () -> Void) {
         workItem?.cancel()
         workItem = DispatchWorkItem(block: action)
         guard let validWorkItem = workItem else { return }

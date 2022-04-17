@@ -10,7 +10,7 @@ import UIKit
 final class SearchTableViewCell: UICollectionViewCell {
     static let identifier = String(describing: SearchTableViewCell.self)
 
-    private lazy var posterImageView: UIImageView = {
+    private var posterImageView: UIImageView = {
         let posterImageView = UIImageView()
         posterImageView.contentMode = .scaleToFill
         posterImageView.clipsToBounds = true
@@ -63,7 +63,7 @@ final class SearchTableViewCell: UICollectionViewCell {
         scopeScore.text = movie.voteAverage.description
     }
     
-    func setLayoutForStackView() {
+    private func setLayoutForStackView() {
         contentView.addSubview(cellStackView)
         NSLayoutConstraint.activate([cellStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
                                      cellStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor ),
