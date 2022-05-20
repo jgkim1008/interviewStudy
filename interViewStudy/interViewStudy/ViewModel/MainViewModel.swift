@@ -22,7 +22,7 @@ typealias SnapShot = NSDiffableDataSourceSnapshot<Section, MovieInfoModel>
 final class MainViewModel {
     private let networkManager = NetworkManager(networkable: NetworkModule())
     private let imageManager = ImageManager()
-    private var currentPage = 1
+    private var page = (currentPage: 1, maximumPage: Int.max)
     private var viewState: ViewState = .idle
     var dataSource: DataSource?
 
@@ -43,11 +43,13 @@ final class MainViewModel {
         self.viewState = .isLoading
         
         networkManager.request(with: route,
-                               queryItems: route.generateNowPlayingQueryItems(page: currentPage),
+                               queryItems: route.generateNowPlayingQueryItems(page: page.currentPage),
                                requestType: .request) { [weak self] (result: Result<MovieModel, Error>) in
             switch result {
             case .success(let data):
-                self?.currentPage += 1
+                guard self?.isReachTheEnd(data) == false else {
+                    return 
+                }
                 
                 data.result.forEach { data in
                     guard let url = URL(string: "https://image.tmdb.org/t/p/w500/" + (data.posterPath ?? "")) else { return }
@@ -63,5 +65,15 @@ final class MainViewModel {
                 }
             }
         }
+    }
+    
+    func isReachTheEnd(_ data: MovieModel) -> Bool {
+        guard page.currentPage < page.maximumPage else {
+            return true
+        }
+        page.maximumPage = data.totalPages
+        page.currentPage += 1
+        
+        return false
     }
 }

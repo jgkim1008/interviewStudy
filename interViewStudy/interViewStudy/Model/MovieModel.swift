@@ -11,10 +11,12 @@ import UIKit
 struct MovieModel: Decodable, Hashable {
     let dates: MovieDate
     let result: [MovieData]
+    let totalPages: Int
     
     enum CodingKeys: String, CodingKey {
         case dates
         case result = "results"
+        case totalPages = "total_pages"
     }
     
     struct MovieDate: Decodable {
